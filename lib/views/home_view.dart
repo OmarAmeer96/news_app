@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/widgets/category_card.dart';
+import '../widgets/category_list_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -13,18 +13,24 @@ class HomeView extends StatelessWidget {
       appBar: _buildAppBar(),
       body: Padding(
         padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
-        child: SizedBox(
-          height: 110,
-          child: ListView.builder(
-            itemCount: 10,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return const Padding(
-                padding: EdgeInsets.only(right: 14),
-                child: CategoryCard(),
-              );
-            },
-          ),
+        child: Column(
+          children: [
+            const CategoryListView(),
+            const SizedBox(
+              height: 26,
+            ),
+            Container(
+              width: double.infinity,
+              height: 220,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                image: const DecorationImage(
+                  image: AssetImage("assets/images/sports.avif"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
