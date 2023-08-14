@@ -55,21 +55,12 @@ class ArticlesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SizedBox(
-        width: double.infinity,
-        child: ListView.builder(
-          // Very bad for the Performance (shrinkWrap).
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: articles.length,
-          scrollDirection: Axis.vertical,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 25),
-              child: NewsTile(article: articles[index]),
-            );
-          },
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        childCount: articles.length,
+        (context, index) => Padding(
+          padding: const EdgeInsets.only(bottom: 25),
+          child: NewsTile(article: articles[index]),
         ),
       ),
     );
