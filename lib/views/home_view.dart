@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/widgets/news_tiles_list_view.dart';
 import '../widgets/category_list_view.dart';
-import '../widgets/news_tile.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -14,16 +14,14 @@ class HomeView extends StatelessWidget {
       appBar: _buildAppBar(),
       body: const Padding(
         padding: EdgeInsets.only(top: 16, left: 16, right: 16),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              CategoryListView(),
-              SizedBox(
-                height: 26,
-              ),
-              NewsTile(),
-            ],
-          ),
+        child: Column(
+          children: [
+            CategoryListView(),
+            SizedBox(
+              height: 26,
+            ),
+            ArticlesListView(),
+          ],
         ),
       ),
     );
