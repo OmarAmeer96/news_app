@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/category_list_view.dart';
+import '../widgets/news_tile.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -11,25 +12,15 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xff1f1f1f),
       appBar: _buildAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+      body: const Padding(
+        padding: EdgeInsets.only(top: 16, left: 16, right: 16),
         child: Column(
           children: [
-            const CategoryListView(),
-            const SizedBox(
+            CategoryListView(),
+            SizedBox(
               height: 26,
             ),
-            Container(
-              width: double.infinity,
-              height: 220,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                image: const DecorationImage(
-                  image: AssetImage("assets/images/sports.avif"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+            NewsTile(),
           ],
         ),
       ),
