@@ -59,7 +59,9 @@ class ArticlesListView extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
+          // Very bad for the Performance (shrinkWrap).
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: articles.length,
           scrollDirection: Axis.vertical,
           itemBuilder: (context, index) {
