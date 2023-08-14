@@ -59,11 +59,12 @@ class ArticlesListView extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemCount: articles.length,
           scrollDirection: Axis.vertical,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 14),
+              padding: const EdgeInsets.only(bottom: 25),
               child: NewsTile(article: articles[index]),
             );
           },

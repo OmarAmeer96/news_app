@@ -25,7 +25,7 @@ class NewsTile extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 7,
         ),
         Text(
           article.title,
