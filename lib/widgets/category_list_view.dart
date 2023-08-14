@@ -36,6 +36,10 @@ class CategoryListView extends StatelessWidget {
       imagePath: "assets/images/technology.jpeg",
       categoryName: "Technology",
     ),
+    CategoryModel(
+      imagePath: "assets/images/sports.avif",
+      categoryName: "Sports",
+    ),
   ];
 
   @override

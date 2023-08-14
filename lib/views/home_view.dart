@@ -14,14 +14,16 @@ class HomeView extends StatelessWidget {
       appBar: _buildAppBar(),
       body: const Padding(
         padding: EdgeInsets.only(top: 16, left: 16, right: 16),
-        child: Column(
-          children: [
-            CategoryListView(),
-            SizedBox(
-              height: 26,
-            ),
-            NewsTile(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CategoryListView(),
+              SizedBox(
+                height: 26,
+              ),
+              NewsTile(),
+            ],
+          ),
         ),
       ),
     );
